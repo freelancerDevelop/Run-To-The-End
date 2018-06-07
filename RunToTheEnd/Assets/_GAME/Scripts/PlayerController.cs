@@ -2,19 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private Swipe swipe;
-    private sbyte currenLane = 0;
+    int coin = 0;
+    private bool isDead;
     private bool jumpping = false;
+    private sbyte currenLane = 0;
+    private float speed = 6.0f;
+    private Swipe swipe;
+
+    public MenuControl menu;
     private Vector3 targetPosition;
     private Rigidbody rb;
     private CharacterController controller;
-    private float speed = 10.0f;
-
+    public Text score;
+    private AudioSource  audio;
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
         swipe = GetComponent<Swipe>();
         targetPosition = Vector3.zero;
         rb = GetComponent<Rigidbody>();
@@ -23,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (isDead)
+            return;
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || swipe.SwipeLeft)
             ChangLane(-1);
         else if
@@ -55,7 +64,15 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Coin"))
         {
-
+            audio.Play();
+            coin++;
+            score.text = coin.ToString();
+        }
+        if (other.CompareTag("Enemy"))
+        {
+            isDead = true;
+            PlayerPrefs.SetInt("Coin", coin);
+            menu.Dead();
         }
     }
 
