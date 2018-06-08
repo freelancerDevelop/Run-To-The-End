@@ -209,9 +209,9 @@ ModelImporter:
     4300006: costume_02
     4300008: face_02
     4300010: costume_004
-    7400000: run_front@loop
-    7400002: run_left@loop
-    7400004: run_right@loop
+    7400000: runLoop
+    7400002: runLeft
+    7400004: runRight
     9500000: //RootNode
     13700000: Accessory_00
     13700002: costume_004
@@ -250,7 +250,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: run_front@loop
+      name: runLoop
       takeName: Take 001
       firstFrame: 10
       lastFrame: 36
@@ -498,7 +498,7 @@ ModelImporter:
       maskSource: {fileID: 101100000, guid: a89a27f8cd07c8e49a2fe4a66ee30f11, type: 2}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: run_left@loop
+      name: runLeft
       takeName: Take 001
       firstFrame: 71
       lastFrame: 97
@@ -746,7 +746,7 @@ ModelImporter:
       maskSource: {fileID: 101100000, guid: a89a27f8cd07c8e49a2fe4a66ee30f11, type: 2}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: run_right@loop
+      name: runRight
       takeName: Take 001
       firstFrame: 135
       lastFrame: 158
@@ -1009,6 +1009,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88

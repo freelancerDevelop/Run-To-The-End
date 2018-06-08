@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     }
     public void Play()
     {
+        AdmobManager.Instance.RequestBanner();
         SceneManager.LoadScene("1_Game");
     }
     public void Shop()

@@ -10,10 +10,21 @@ public class Coin : MonoBehaviour
         transform.Rotate(new Vector3(0, 1, 0));
     }
 
+    private void OnDisable()
+    {
+        Invoke("Invisible", 2.0f);
+    }
 
-
+    private void Invisible()
+    {
+        gameObject.SetActive(true);
+    }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Coin: " + other.tag);
+
+        gameObject.SetActive(false);
+
+        if (PlayerController.Instance.IsDead)
+            return;
     }
 }

@@ -2808,7 +2808,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157253225172222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4598240934102516}
@@ -3090,7 +3090,7 @@ Animator:
   m_GameObject: {fileID: 1118636885275644}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 820f77f2e01e2a1478869b4500f82021, type: 3}
-  m_Controller: {fileID: 9100000, guid: d071387d14e264545b12d4bfba52b03c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7fd66c8c027f985489bc9a7a967741a0, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -3120,6 +3120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7440f969105f99499f150bdeb10ee71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  score: {fileID: 0}
+  audio: {fileID: 0}
+  audioDead: {fileID: 0}
 --- !u!136 &136951711384016606
 CapsuleCollider:
   m_ObjectHideFlags: 1
