@@ -8,8 +8,8 @@ public class MenuControl : MonoBehaviour
 {
     public GameObject[] menu;
     public Text topScore;
-    public AudioSource sound;
-
+    public AudioSource sound,soundbtn;
+    
     public void Pause()
     {
         Time.timeScale = 0.0f;
@@ -29,6 +29,7 @@ public class MenuControl : MonoBehaviour
 
     public void Resume()
     {
+        soundbtn.Play();
         Time.timeScale = 1.0f;
         menu[0].SetActive(false);
         menu[1].SetActive(true);
@@ -36,7 +37,7 @@ public class MenuControl : MonoBehaviour
 
     public void PlayAgain()
     {
-
+        soundbtn.Play();
         menu[0].SetActive(false);
         menu[1].SetActive(true);
         menu[2].SetActive(false);
@@ -46,10 +47,12 @@ public class MenuControl : MonoBehaviour
     }
     public void Shop()
     {
+        soundbtn.Play();
         SceneManager.LoadScene("Shop");
     }
     public void OnHome()
     {
+        soundbtn.Play();
         Time.timeScale = 1.0f;
         SceneManager.LoadScene("Home");
     }

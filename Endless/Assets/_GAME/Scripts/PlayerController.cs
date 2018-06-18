@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -30,14 +31,17 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        int positionCharacter = PlayerPrefs.GetInt("character");
-        for (int i = 0; i < 7; i++)
+        if (SceneManager.GetSceneByName("1_Game").ToString() == SceneManager.GetActiveScene().name)
         {
-            players[i].gameObject.SetActive(false);
-            if (i == positionCharacter)
-                players[i].SetActive(true);
-        }
+            int positionCharacter = PlayerPrefs.GetInt("character");
+            for (int i = 0; i < 7; i++)
+            {
+                players[i].gameObject.SetActive(false);
+                if (i == positionCharacter)
+                    players[i].SetActive(true);
+            }
 
+        }
         Instance = this;
         anim = GetComponentInChildren<Animator>();
         swipe = GetComponent<Swipe>();
